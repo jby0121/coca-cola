@@ -1,0 +1,440 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700');
+/* reset */
+body {
+	line-height:1.42857143;
+	color:#666666;
+	background-color:#fff;
+	margin:0;
+	font: 400 14px Raleway sans-serif;
+	letter-spacing: 1px;
+}
+img {border:none;}
+
+br	{
+	letter-spacing: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size:1em;
+}
+h1, h2, h3, h4, h5, h6, div, p, dl, dt, dd, ul, ol, li, form, fieldset, blockquote, address, table, thead, tbody, tfoot, tr, td, caption {
+	margin:0;
+	padding:0;
+}
+ul, ol {
+	list-style:none;
+}
+
+a {text-decoration:none; color:#000000;}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+small {font-size: 0.5em; vertical-align: 0.5em;}
+
+/*header*/
+header {padding: 0 32px; /*32/1185 42/1185*/ box-sizing: border-box; position: fixed; top: 0; left: 0; right: 0; z-index: 500; background-color: rgb(255,255,255);}
+header:after {content: ''; display: block; clear: both;}
+
+h1 {float: left; margin: 18px 30px}
+h1 img {width: 48px;}
+nav.nav_left {float: left; width: 29.113924%;/*345/1185*/ min-width: 350px;}
+nav.mobile {display: none;}
+nav.mobile .hamburger {display: none; float: left; width: 48px; height: 90px;}
+nav.mobile.active .hamburger {background-color: #ececec;}
+nav.mobile .hamburger:after {content: ""; display: block; clear: both;}
+nav.mobile .hamburger > span {display: block; margin-left: 16px; margin-right: 16px; width: 16px; height: 3px; background-color: #000000;}
+nav.mobile .hamburger > span + span {margin-top: 2px;}
+nav.mobile .hamburger > span:first-child {margin-top: 38px;}
+
+nav.nav_left > ul > li > a > span {font-size: 14px;}
+nav.nav_left > ul > li > a:hover > span {color: #f40000;}
+nav.nav_left > ul > li.brands > a > span {color: #f40000;}
+nav.nav_left > ul > li > a > svg {transition: all 0.1s ease-in-out;}
+
+nav.desktop > ul {font-size: 0; width: 100%; /*345px*/ margin-top: 35px;}
+nav.desktop > ul:after {content: ''; display: block; clear: both;}
+nav.desktop > ul > li {float: left; position: relative; padding-bottom: 38px;}
+nav.desktop > ul > li.brands {width: 32%; /*91+20/345*/ }
+nav.desktop > ul > li.shop {width: 17%; /*38+20/345*/}
+nav.desktop > ul > li.give {width: 15%; /*33+20/345*/}
+nav.desktop > ul > li.rewards {width: 25%; /*67+20/345*/}
+nav.desktop > ul > li + li {margin-left: 3.5%; /*25/345*/}
+nav.desktop > ul > li > a {width: 100%;}
+nav.desktop > ul > li > a > svg.arrow1 {margin-left: 12.612613%; /*14/111*/}
+nav.desktop > ul > li > a > svg.arrow2 {margin-left: 24.137931%; /*14/58*/}
+
+
+.sub_menu {float: right; margin: 33px 0 0;}
+.sub_menu > li {float: left; position: relative; padding-bottom: 33px;}
+.sub_menu > li + li {margin-left: 33px;}
+.sub_menu > li > a {text-indent: -9999px; display: inline-block; width: 24px; height: 24px;}
+.sub_menu > li > a > img {vertical-align: top;}
+.sub_menu li.other_site {}
+.sub_menu li.other_site > a {background: url('../images/9-Square_Unselected.svg');}
+.sub_menu li.other_site > a:hover {background: url('../images/9Square_Selected.svg');}
+.sub_menu li.members {}
+.sub_menu li.members > a {background: url('../images/ic_person_black_24px.svg');}
+.sub_menu li.members > a:hover {background: url('../images/Profile_Selected.svg');}
+.sub_menu li.bell {}
+.sub_menu li.bell > a {background: url('../images/ic_notifications_black_24px.svg');}
+.sub_menu li.bell > a:hover {background: url('../images/Alert_Bell_Selected.svg');}
+
+.item_more {display: none; position: absolute; border: 1px solid #949494; background-color: white;}
+li.active .item_more {display: block;}
+li .item_more:before {content: ''; position: absolute; display: block; top: -20px; left: 26px; border: 10px solid; border-top-color: transparent; border-right-color: transparent; border-left-color: transparent; border-bottom-color: #949494;}
+li .item_more:after {content: ''; position: absolute; display: block; top: -19px; left: 26px; border: 10px solid; border-top-color: transparent; border-right-color: transparent; border-left-color: transparent; border-bottom-color: white;}
+li .item_more > ul > li > a:hover {color: #f40000;}
+
+li.brands .item_more {padding: 10px; width: 279px; top: 50px; left: 0;}
+li.brands .item_more > ul > li + li {border-top: 1px solid #949494;}
+li.brands .item_more > ul > li {}
+li.brands .item_more > ul > li > a {color: #A9A9A9; font-size: 14px; font-weight: 700; margin: 12px 0 12px 15px; display: inline-block;}
+
+li.shop .item_more {padding: 10px; width: 529px; top: 50px; left: 0;}
+li.shop .item_more:before {}
+li.shop .item_more:after {}
+li.shop .item_more > h2 {}
+li.shop .item_more > ul {}
+li.shop .item_more > ul > li {float: left;}
+li.shop .item_more > ul > li > a {display: inline-block; width: 269px; height: 77px; }
+li.shop .item_more > ul > li.coca_store {margin-right: 10px;}
+li.shop .item_more > ul > li.coca_store > a {width: 250px; height: 250px; background: url(../images/nav_coke_store.png) no-repeat; background-size: 250px 250px;}
+li.shop .item_more > ul > li.amazon_store {}
+li.shop .item_more > ul > li.amazon_store > a {background: url(../images/nav_amazon.png) no-repeat; background-size: 269px 77px;}
+li.shop .item_more > ul > li.peapod_store {}
+li.shop .item_more > ul > li.peapod_store > a {margin-top: 10px; background: url(../images/peapod.png) no-repeat; background-size: 269px 77px;}
+li.shop .item_more > ul > li.locator {}
+li.shop .item_more > ul > li.locator > a{margin-top: 10px; background: url(../images/nav_product_locator.png) no-repeat; background-size: 269px 77px;}
+
+li.other_site .item_more {padding: 10px; width: 228px; top: 50px; left: -130px;}
+li.other_site .item_more:before {left: 130px;}
+li.other_site .item_more:after {left: 130px;}
+li.other_site .item_more > h2 {text-align: center; margin-top: 12px; color: #000000;}
+li.other_site .item_more > ul {}
+li.other_site .item_more > ul > li {}
+li.other_site .item_more > ul > li > a {color: #4a4a4a; font-size: 14px; font-weight: 700; margin: 12px 0 12px 15px; display: inline-block;}
+
+li.members .item_more {padding: 10px; width: 80px; top: 50px; left: -40px;}
+li.members .item_more:before {left: 40px;}
+li.members .item_more:after {left: 40px;}
+li.members .item_more > h2 {display: none;}
+li.members .item_more > ul {}
+li.members .item_more > ul > li {text-align: center;}
+li.members .item_more > ul > li + li {margin-top: 12px;}
+li.members .item_more > ul > li > a {color: #4a4a4a; font-size: 14px; font-weight: 700; display: inline-block;}
+li.members .item_more > ul > li > a:hover {color: #f40000;}
+
+
+/*common*/
+main {margin-top: 90px;}
+main span.check_btn {display: block; text-align: center;}
+main span.check_btn > a {color: #f40000; font-size: 18px; line-height: 57px; display: inline-block; background-color: #ffffff; text-align: center; padding: 0 35px; border-radius: 30px; box-sizing: border-box;}
+main .container {width: 96.2%; /*1140px*/ max-width: 1140px; margin: 0 auto;}
+main p.slogan {width: 100%; line-height: 45px; text-align: center; font-size: 32px; color: rgb(0,0,0); display: block; margin: 56px 0;}
+main p.slogan > strong {font-weight: 700; margin-top: 43px; display: block;}
+
+.visual_contents > strong {font-weight: 700; text-align: center; display: block; color: #ffffff;}
+.container .visual_contents {position: absolute; width: 50%; /*570px*/ box-sizing: border-box; top: 50%; transform: translateY(-50%); padding: 0 20px;}
+.container .visual_contents > strong {font-size: 35px;}
+.container .visual_contents > p {color: #ffffff; text-align: center; font-size: 20px; font-weight: 300; line-height: 28px; margin: 13px 0 28px;}
+
+/*main*/
+.top_visual {position: relative; width: 100%; height: 700px; background-color: #0b0f10; background-image: url(../images/2018-fall-football-hp-hero.jpg); background-repeat: no-repeat; background-size: cover; background-position: center;}
+.top_visual .visual_contents {position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 70.042194%; /*830px*/}
+.top_visual .visual_contents > strong {font-size: 48px;}
+.top_visual .visual_contents > p {margin: 12px 0 21px; color: #ffffff; font-size: 18px; text-align: center;}
+.top_visual .visual_contents > span.check_btn > a {line-height: 45px;}
+
+.sec_visual {position: relative; width: 100%; height: 485px; margin-bottom: 35px; background-image: url(../images/Coke_Homepage_FallFootball_Hero_Desktop.jpg); background-repeat: no-repeat; background-size: cover; background-position: center;}
+.sec_visual .visual_contents {left: 0;}
+
+.add_banner {margin-bottom: 35px;}
+.add_banner ul.slide {}
+.add_banner ul.slide li {width: 100%; height: 480px; position: relative;}
+.add_banner ul.slide li .visual_contents > p {line-height: 22px; font-size: 16px;}
+.add_banner ul.slide li.every {background-image: url(../images/refresh-offers-tile-desktop-label.jpg); background-repeat: no-repeat; background-size: cover; background-color: rgb(0,0,0); background-position: center;}
+.add_banner ul.slide li.app {background-image: url(../images/offers_desktop.jpg); background-repeat: no-repeat; background-size: cover; background-color: rgb(0,0,0); background-position: center;}
+.add_banner ul.slide li.classic {background-image: url(../images/refresh-coke-origins-homepage.jpg); background-repeat: no-repeat; background-size: cover; background-color: rgb(0,0,0); background-position: center;}
+.add_banner ul.slide li.every .visual_contents {left: 50%; transform: translate(-50%, -50%);}
+.add_banner ul.slide li.every .visual_contents > p {margin-bottom: 22px;}
+.add_banner ul.slide li.app .visual_contents {right: 0;}
+.add_banner ul.slide li.app .visual_contents > span {display: block; text-align: center; font-size: 0;}
+.add_banner ul.slide li.app .visual_contents > span > a:last-child {margin-left: 10px;}
+.add_banner ul.slide li.app .visual_contents > span > a > img {display: inline;}
+.add_banner ul.slide li.classic .visual_contents {right: 0;}
+.add_banner ul.slide li.classic .visual_contents > p {margin-bottom: 22px;}
+
+.add_banner .bx-wrapper {margin: 0; box-shadow: none; border: none;}
+.add_banner .bx-wrapper .bx-controls-direction {}
+.add_banner .bx-wrapper .bx-controls-direction a {background: none;}
+
+.add_banner .bx-wrapper .bx-pager {padding: 0; bottom: 26px;}
+.add_banner .bx-wrapper .bx-pager .bx-pager-item + .bx-pager-item {margin-left: 15px;}
+.add_banner .bx-wrapper .bx-pager .bx-pager-item > a {background:rgba(255,255,255, 0.5); width: 14px; height: 14px; border-radius: 7px; margin: 0;}
+.add_banner .bx-wrapper .bx-pager .bx-pager-item > a.active {background:rgba(255,255,255, 0.8)}
+.add_banner .bx-wrapper .bx-pager .bx-pager-item > a:hover {background:rgba(255,255,255, 0.5);}
+.add_banner .bx-wrapper .bx-pager .bx-pager-item > a.active:hover {background:rgba(255,255,255, 0.8)}
+
+.donate {position: relative; width: 100%;}
+.donate:after {content: ''; display: block; clear: both;}
+.donate .visual_contents {position: static; float: left; transform: none; margin-top: 29px; text-align: center;}
+.donate .visual_contents > span {display: block; font-size: 24px; font-weight: 700; color: rgb(0,0,0);}
+.donate .visual_contents > img {max-width: 100%; margin-top: 6px;}
+.donate .visual_contents > p {line-height: 22px; margin-bottom: 15px; font-size: 16px; color: rgb(0,0,0); font-weight: 400;}  
+.donate .visual_contents > p:before {content: ''; display: block; margin: 50px auto 17px; width: 66.666667%; /*380/570*/ height: 1px; background-color: rgb(0,0,0);}
+.donate .visual_contents > span.check_btn > a {background-color: #f40000; color: #ffffff; font-weight: 100;}  
+.donate .video {width: 50%; float: right; font-size: 0;}
+.donate .video > a {position: relative; width: 100%; padding-top: 58.947368%; display: inline-block; background-size: 100%; background-image: url('../images/refresh-coke-homepage-video-desktop.png'); background-repeat: no-repeat;}
+.donate .video > a > span {transition: all 0.2s ease-in; position: absolute; top: 50%; left: 50%; margin-top: -62px; margin-left: -62px; display: block; width: 124px; height: 124px; border-radius: 62px; background-color: rgba(0,0,0, 0.6);}
+.donate .video > a:hover > span {background-color: rgba(0,0,0, 0.8);}
+.donate .video > a > span > svg {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+
+.nutri { margin: 35px 0; }
+.nutri:after {content: ''; display: block; clear: both;}
+.nutri > li {position: relative; float: left; width: 33.3%; /*395/1185*/ padding-top: 25%; /*296.25/1185*/}
+.nutri > li.coca_facts {background: url(../images/refresh-coke-mobile.jpg) no-repeat center; background-size: cover;}
+.nutri > li.zero_facts {background: url(../images/refresh-coke-zero-mobile.jpg) no-repeat center; background-size: cover;}
+.nutri > li.lite_facts {background: url(../images/refresh-coke-life-mobile.jpg) no-repeat center; background-size: cover;}
+.nutri > li > h3 {display: none;}
+.nutri > li > span.check_btn {position: absolute; right: 0; left: 0; bottom: 10%; /*29.625/296.25*/ margin: 0 auto;}
+
+/*footer*/
+footer {background-color: #f40000; color: #ffffff; overflow: hidden; padding: 66px 0 35px;}
+ul.foot_top {overflow: hidden; margin: 0 auto 30px; width: 88.607595%; /*1050/1185*/ max-width: 1050px;}
+ul.foot_top > li {float: left; width: 25%;/*225/1006*/ margin: 0 0 30px; }
+ul.foot_top > li > h4 {margin-bottom: 10px;}
+ul.foot_top > li > h4:after {content: ''; display: block; border-bottom: 1px solid #e42128;}
+ul.foot_top > li > ul {}
+ul.foot_top > li > ul > li {}
+ul.foot_top > li > ul > li + li {margin-top: 10px;}
+ul.foot_top > li > ul > li > a {color: #ffffff; font-weight: 100;}
+
+ul.foot_top li.connect {/*min-width: 207px;*/ }
+ul.foot_top li.connect > h4 {margin-left: 20px;}
+ul.foot_top li.connect ul.sns {}
+ul.foot_top li.connect ul.sns > li {float: left;}
+ul.foot_top li.connect ul.sns > li + li {margin-left: 15px; margin-top: 0;}
+ul.foot_top li.connect ul.sns > li:last-child {margin-top: 15px;}
+ul.foot_top li.connect ul.sns > li > a > img {vertical-align: top;}
+
+p.copy {text-align: center; font-weight: 100; margin-bottom: 10px;}
+
+ul.site_map {text-align: center; width: 88.607595%; margin: 0 auto;}
+ul.site_map li {display: inline-block;}
+ul.site_map li + li {padding-left: 13px; margin-left: 13px; border-left: 1px solid #ffffff;}
+ul.site_map li > a {color: #ffffff; line-height: 20px;}
+
+
+
+
+/* 420이하 */
+@media screen and (max-width:420px) {
+
+/*common*/
+main p.slogan {line-height: inherit; font-size: 20px; margin: 40px 0;}
+main p.slogan > strong {margin-top: 38px;}
+
+.container .visual_contents {width: 100%;top: auto; left: 0; right: 0; transform: none; margin: 0 auto;}
+.container .visual_contents > strong {font-size: 35px;}
+.container .visual_contents > p {font-size: 18px; font-weight: 100; line-height: 24px; margin: 13px 0 28px;}
+
+/*header*/
+header {padding: 0 24px;}
+h1 {position: absolute; top: 0; right: 50%; margin-right: -24px;}
+nav.desktop {display: none;}
+nav.mobile {display: block; float: left; width: auto; min-width: auto;}
+nav.mobile .hamburger {display: block;}
+nav.mobile > ul {display: none; position: absolute; top: 90px; left:0; right: 0; background-color: #ececec; margin-top: 0; font-size: 0;}
+nav.mobile.active > ul {display: block;}
+
+nav.mobile > ul > li {float: none; position: relative; padding-bottom: 0;}
+nav.mobile > ul > li + li {border-top: 1px solid #949494;}
+nav.mobile > ul > li > a > span {line-height: 43px; font-weight: bold; margin-left: 31px;}
+nav.mobile > ul > li > a > svg {position: absolute; top: 16px; left: 14px;}
+
+.item_more {position: static; border: none; background-color: #ececec;}
+li .item_more:before {display: none;}
+li .item_more:after {display: none;}
+li .item_more > ul > li > a:hover {color: #f40000;}
+
+nav.mobile li .item_more {width: 100%; padding: 0;}
+nav.mobile li .item_more > ul > li + li {border-top: 1px solid #949494;}
+nav.mobile li .item_more > ul > li > a {color: #272727; font-weight: 400; margin: 12px 0 12px 46px; display: block;}
+nav.mobile li .item_more > ul > li > a {color: #272727; font-size: 14px; font-weight: 400; margin: 12px 0 12px 46px;  display: block; width: auto; height: auto;}
+
+li.shop .item_more > ul > li {float: none;} 
+li.shop .item_more > ul > li.coca_store {margin-right: 0;}
+li.shop .item_more > ul > li.coca_store > a {width: auto; height: auto; background: none;}
+li.shop .item_more > ul > li.amazon_store > a {background: none;}
+li.shop .item_more > ul > li.peapod_store > a {margin-top: 12px; background: none;}
+li.shop .item_more > ul > li.locator > a{margin-top: 12px; background: none;}
+
+nav.mobile li.other_site .item_more > h2 {display: none;}
+
+.sub_menu li {position: static;}
+.sub_menu > li + li {margin-left: 16px;}
+.sub_menu .item_more {position: absolute; background-color: #ececec; margin-top: 0; }
+
+.sub_menu li.other_site{display: none;}
+
+li.members .item_more {padding: 0; width: 100%; top: 90px; left:0; right: 0;}
+li.members .item_more > ul > li {text-align: left;}
+li.members .item_more > ul > li + li {margin-top: 0; border-top: 1px solid #949494;}
+li.members .item_more > ul > li > a {margin: 12px 0 12px 46px; display: block;}
+
+/*main*/
+.top_visual {background-image: url(../images/fall-football-mobile.jpg); background-position: center top; height: 0; padding-top: calc(260px + 65%);}
+.top_visual .visual_contents {top: auto; left: 50%; bottom: 56px; transform: translateX(-50%); width: 100%; padding: 0 20px; box-sizing: border-box;}
+.top_visual .visual_contents > strong {font-size: 28px; width: 220px; margin: 0 auto;}
+
+.sec_visual {height: 0; padding-top: calc(295px + 125%); margin-bottom: 15px; background-image: url(../images/Coke_Homepage_FallFootball_Hero_mobile.jpg); background-position: center top;}
+.sec_visual .visual_contents {bottom: 68px;}
+.sec_visual .visual_contents > strong {width: 220px; margin: 0 auto;}
+
+.add_banner {margin-bottom: 55px;}
+.add_banner ul.slide li {height: auto;}
+.add_banner ul.slide li .visual_contents {position: initial; margin-bottom: 60px;}
+.add_banner ul.slide li.every {background-image: url(../images/refresh-offers-mobile-label.jpg); background-position: center top;}
+.add_banner ul.slide li.app {background-image: url(../images/offer_tile_mobile.jpg); background-position: center top;}
+.add_banner ul.slide li.classic {background-image: url(../images/Coke_Origins_Tile_Mobile.png); background-position: center top;}
+.add_banner ul.slide li.every .visual_contents {left: 0; transform: none; padding-top: 200px;}
+.add_banner ul.slide li.every .visual_contents > p {margin-bottom: 19px;}
+.add_banner ul.slide li.app .visual_contents {padding-top: 82%;}
+.add_banner ul.slide li.classic .visual_contents {padding-top: 240px;}
+
+.add_banner .bx-wrapper .bx-pager {bottom: 24px;}
+.add_banner .bx-wrapper .bx-pager .bx-pager-item + .bx-pager-item {margin-left: 19px;}
+.add_banner .bx-wrapper .bx-pager .bx-pager-item > a {width: 10px; height: 10px; border-radius: 5px;}
+
+.donate {position: relative; width: 100%;}
+.donate:after {content: ''; display: block; clear: both;}
+.donate .visual_contents {margin-top: 0;}
+.donate .visual_contents > p:before {margin: 20px auto 17px;}
+.donate .video {width: 100%; margin-top: 40px;}
+.donate .video > a {background-image: url('../images/give-video-mobile.png')}
+
+.nutri { margin: 15px 0; }
+.nutri > li {float: none; width: 100%; padding-top: 317px;}
+
+/*footer*/
+footer {text-align: center;}
+ul.foot_top {margin: 0 auto 30px;}
+ul.foot_top > li {float: none; width: 100%; margin: 0 0 65px; }
+ul.foot_top > li > h4:after {margin-top: 10px;}
+ul.foot_top > li > ul > li > a {font-size: 12px;}
+
+ul.foot_top li.connect > ul {overflow: hidden;}
+ul.foot_top li.connect ul.sns > li:last-child {margin-top: 0;}
+
+p.copy {font-size: 12px; margin-bottom: 30px;}
+
+ul.site_map li {display: block; border-top: 1px solid #ffffff;}
+ul.site_map li:last-child {border-bottom: 1px solid #ffffff;}
+ul.site_map li + li {padding-left: 0; margin-left: 0; border-left:none;}
+ul.site_map li > a {color: #ffffff; line-height: 40px;}
+
+}
+	
+
+/* 421이상 768이하 */
+@media screen and (min-width:421px) and (max-width: 768px) {
+
+/*common*/
+main p.slogan {line-height: inherit; font-size: 20px; margin: 40px 0;}
+main p.slogan > strong {margin-top: 38px;}
+
+.container .visual_contents {width: 100%; top: auto; left: 0; right: 0; transform: none; margin: 0 auto;}
+.container .visual_contents > strong {font-size: 35px;}
+.container .visual_contents > p {font-size: 18px; font-weight: 100; line-height: 24px; margin: 13px 0 28px;}
+
+/*header*/
+header {padding: 0 24px;}
+h1 {position: absolute; top: 0; right: 50%; margin-right: -24px;}
+nav.desktop {display: none;}
+nav.mobile {display: block; float: left; width: auto; min-width: auto;}
+nav.mobile .hamburger {display: block;}
+nav.mobile > ul {display: none; position: absolute; top: 90px; left:0; right: 0; background-color: #ececec; margin-top: 0; font-size: 0;}
+nav.mobile.active > ul {display: block;}
+
+nav.mobile > ul > li {float: none; position: relative; padding-bottom: 0;}
+nav.mobile > ul > li + li {border-top: 1px solid #949494;}
+nav.mobile > ul > li > a > span {line-height: 43px; font-weight: bold; margin-left: 31px;}
+nav.mobile > ul > li > a > svg {position: absolute; top: 16px; left: 14px;}
+
+.item_more {position: static; border: none; background-color: #ececec;}
+li .item_more:before {display: none;}
+li .item_more:after {display: none;}
+li .item_more > ul > li > a:hover {color: #f40000;}
+
+nav.mobile li .item_more {width: 100%; padding: 0;}
+nav.mobile li .item_more > ul > li + li {border-top: 1px solid #949494;}
+nav.mobile li .item_more > ul > li > a {color: #272727; font-weight: 400; margin: 12px 0 12px 46px; display: block;}
+nav.mobile li .item_more > ul > li > a {color: #272727; font-size: 14px; font-weight: 400; margin: 12px 0 12px 46px;  display: block; width: auto; height: auto;}
+
+li.shop .item_more > ul > li {float: none;} 
+li.shop .item_more > ul > li.coca_store {margin-right: 0;}
+li.shop .item_more > ul > li.coca_store > a {width: auto; height: auto; background: none;}
+li.shop .item_more > ul > li.amazon_store > a {background: none;}
+li.shop .item_more > ul > li.peapod_store > a {margin-top: 12px; background: none;}
+li.shop .item_more > ul > li.locator > a{margin-top: 12px; background: none;}
+
+nav.mobile li.other_site .item_more > h2 {display: none;}
+
+.sub_menu li {position: static;}
+.sub_menu > li + li {margin-left: 24px;}
+.sub_menu .item_more {position: absolute; background-color: #ececec; margin-top: 0; }
+.sub_menu li.other_site{display: none;}
+
+li.members .item_more {padding: 0; width: 100%; top: 90px; left:0; right: 0;}
+li.members .item_more > ul > li {text-align: left;}
+li.members .item_more > ul > li + li {margin-top: 0; border-top: 1px solid #949494;}
+li.members .item_more > ul > li > a {margin: 12px 0 12px 46px; display: block;}
+
+/*main*/
+.top_visual {background-image: url(../images/fall-football-mobile.jpg); background-position: center top; height: 0; padding-top: calc(260px + 65%);}
+.top_visual .visual_contents {top: auto; left: 50%; bottom: 56px; transform: translateX(-50%); width: 100%; padding: 0 20px; box-sizing: border-box;}
+.top_visual .visual_contents > strong {font-size: 28px; width: 220px; margin: 0 auto;}
+
+.sec_visual {height: 0; padding-top: calc(295px + 125%); margin-bottom: 15px; background-image: url(../images/Coke_Homepage_FallFootball_Hero_mobile.jpg); background-position: center top;}
+.sec_visual .visual_contents {bottom: 68px;}
+.sec_visual .visual_contents > strong {width: 220px; margin: 0 auto;}
+
+.add_banner {margin-bottom: 55px;}
+.add_banner ul.slide li {height: auto;}
+.add_banner ul.slide li .visual_contents {position: initial; margin-bottom: 60px;}
+.add_banner ul.slide li.every {background-image: url(../images/refresh-offers-mobile-label.jpg); background-position: center top;}
+.add_banner ul.slide li.app {background-image: url(../images/offer_tile_mobile.jpg); background-position: center top;}
+.add_banner ul.slide li.classic {background-image: url(../images/Coke_Origins_Tile_Mobile.png); background-position: center top;}
+.add_banner ul.slide li.every .visual_contents {left: 0; transform: none; padding-top: 200px;}
+.add_banner ul.slide li.every .visual_contents > p {margin-bottom: 19px;}
+.add_banner ul.slide li.app .visual_contents {padding-top: 82%;}
+.add_banner ul.slide li.classic .visual_contents {padding-top: 240px;}
+
+.add_banner .bx-wrapper .bx-pager {bottom: 24px;}
+.add_banner .bx-wrapper .bx-pager .bx-pager-item + .bx-pager-item {margin-left: 19px;}
+.add_banner .bx-wrapper .bx-pager .bx-pager-item > a {width: 10px; height: 10px; border-radius: 5px;}
+
+.donate {position: relative; width: 100%;}
+.donate:after {content: ''; display: block; clear: both;}
+.donate .visual_contents {margin-top: 0;}
+.donate .visual_contents > p:before {margin: 20px auto 17px;}
+.donate .video {width: 100%; margin-top: 40px;}
+
+.nutri { margin: 15px 0; }
+.nutri > li {float: none; width: 100%; padding-top: 317px;}
+
+footer {background-color: #f40000; color: #ffffff; overflow: hidden; padding: 66px 0 35px;}
+ul.foot_top > li {float: left; width: 50%; margin: 0 0 30px;}
+ul.foot_top > li > ul > li + li {margin-top: 10px;}
+ul.foot_top > li > ul > li > a {color: #ffffff; font-weight: 100;}
+
+ul.foot_top li.connect ul.sns > li:last-child {clear: both;}
+
+}
+
+
+/* 421이상 768이하 */
+@media screen and (min-width:769px) { }
+
